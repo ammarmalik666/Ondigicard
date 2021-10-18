@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\EmailsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +22,5 @@ Route::get('/faqs', function () {
 Route::get('/order-now', function () {
     return view('questions');
 });
+Route::post('/contact',[EmailsController::class,'contact_form'])->name('form.contact');
+Route::post('/order-now',[EmailsController::class,'order_form'])->name('form.order');

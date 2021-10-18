@@ -46,7 +46,7 @@
                     <li><a href="https://www.linkedin.com/company/ondigicard/" class="dtr-social-button dtr-linkedin" target="_blank" title="linkedin"><span>View Our Profile</span></a></li>
                 </ul>
             </div>
-            <div class="col-12 col-md-2 dtr-rounded-img small-device-space"> <a href="questions.html"><img src="/assets/web_images/experience-img.png" alt="image"></a></div>
+            <div class="col-12 col-md-2 dtr-rounded-img small-device-space"> <a href="/order-now"><img src="/assets/web_images/experience-img.png" alt="image"></a></div>
         </div>
     </div>
 </section>
@@ -80,7 +80,7 @@
         </div>
     </div>
 </section>
-<section class="dtr-section dtr-py-100 bg-white">
+<section id="about" class="dtr-section dtr-py-100 bg-white">
     <div class="container"> 
         <div class="row">
             <div class="dtr-styled-heading">
@@ -144,7 +144,7 @@
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="phil-tab" role="tabpanel" aria-labelledby="phil-tab-1">
                         <div class="row">
-                            <div class="col-12 col-md-5 small-device-space"> <img src="/assets/web_images/phil.jpg" alt="image"> </div>
+                            <div class="col-12 col-md-5 small-device-space"> <img src="/assets/web_images/Phil.jpg" alt="image"> </div>
                             <div class="col-12 col-md-7">
                                 <p>
                                     <b>Phil’s expertise</b> is broad and varied, ranging from devising business exit strategies, designing and managing websites, implementing social media strategies and customer success strategies for business owners and copywriting.
@@ -163,7 +163,7 @@
                     </div>
                     <div class="tab-pane fade" id="shahid-tab-1" role="tabpanel" aria-labelledby="shahid-tab-1-tab">
                         <div class="row">
-                            <div class="col-12 col-md-5 small-device-space"> <img src="/assets/web_images/phil.jpg" alt="image"> </div>
+                            <div class="col-12 col-md-5 small-device-space"> <img src="/assets/web_images/Phil.jpg" alt="image"> </div>
                             <div class="col-12 col-md-7">
                                 <p>
                                     In keeping with their goal to provide  you with  the very best digital card service and product, below are links that should answer any queries that you may have.
@@ -374,28 +374,55 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-6">
+                @if(count($errors) > 0)
+                    @if($errors->first() == 'success')
+                        <div class="alert alert-success">
+                            Message successfully sent.
+                        </div>
+                    @endif
+                @endif
                 <div class="dtr-form">
-                    <form id="contactform" method="post" action="php/contact-form.php">
+                    <form id="" method="post" action="{{route('form.contact')}}">
+                        @csrf
                         <fieldset>
                             <div class="dtr-form-row dtr-form-row-2col">
                                 <p class="dtr-form-column">
-                                    <input name="name"  type="text" placeholder="Name">
+                                    <input name="name"  type="text" placeholder="Name" value="{{old('name')}}">
+                                    @error('name')
+                                        <span style="color: red;font-size: 14px;">
+                                            *{{$message}}
+                                        </span>
+                                    @enderror
                                 </p>
                                 <p class="dtr-form-column">
-                                    <input name="email"  class="required email" type="text" placeholder="Email">
+                                    <input name="email"  class="required email" type="text" placeholder="Email" value="{{old('email')}}">
+                                    @error('email')
+                                        <span style="color: red;font-size: 14px;">
+                                            *{{$message}}
+                                        </span>
+                                    @enderror
                                 </p>
                             </div>
                             <p>
-                                <input name="subject"  type="text" placeholder="Subject">
-                            </p>
-                            <p class="antispam">Leave this empty: <br />
-                                <input name="url" />
+                                <input name="phone"  type="text" placeholder="Phone" value="{{old('phone')}}">
+                                @error('phone')
+                                    <span style="color: red;font-size: 14px;">
+                                        *{{$message}}
+                                    </span>
+                                @enderror
                             </p>
                             <p>
-                                <textarea rows="6" name="message" id="message" class="required"  placeholder="Message"></textarea>
+                                <textarea rows="6" name="message" id="message" class="required"  placeholder="Message">
+                                    {{old('message')}}
+                                </textarea>
+                                @error('message')
+                                    <span style="color: red;font-size: 14px;">
+                                        *{{$message}}
+                                    </span>
+                                @enderror
                             </p>
                             <p class="text-center">
-                                <button class="dtr-btn btn-blue dtr-mt-minus30" type="submit">Order Now<i class="icon-cursor dtr-ml-15"></i></button>
+                                <button class="dtr-btn btn-blue dtr-mt-minus30" type="submit">Enquire Now<i class="icon-cursor dtr-ml-15"></i></button>
                             </p>
                             <div id="result"></div>
                         </fieldset>

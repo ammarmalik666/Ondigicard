@@ -21,7 +21,7 @@
             <div class="dtr-responsive-header fixed-top">
                 <div class="container">
                     <!-- small devices logo --> 
-                    <a href="index.html"><img src="assets/web_images/logo-dark.png" alt="logo"></a> 
+                    <a href="/"><img src="assets/web_images/logo-dark.png" alt="logo"></a> 
                     <!-- small devices logo ends --> 
                     <!-- menu button -->
                     <button id="dtr-menu-button" class="dtr-hamburger" type="button"><span class="dtr-hamburger-lines-wrapper"><span class="dtr-hamburger-lines"></span></span></button>
@@ -69,23 +69,33 @@
                         <div class="dtr-styled-heading">
                             <h4 class="orbitron-font">Personalising your own <span class="color-blue">Digital Business Card</span> is easy! Just fill in the information below that you want on yours and we’ll do the rest.</h4>
                         </div>
+                        <div class="errors">
+                            @if(count($errors) > 0)
+                                @if($errors->first('success'))
+                                    <div class="alert alert-success">
+                                        Message successfully sent.
+                                    </div>
+                                @endif
+                            @endif
+                        </div>  
                         <div class="row">
                             <div class="col-12 col-md-12">
                                 <div class="dtr-form">
-                                    <form id="contactform" method="post" action="php/contact-form.php">
+                                    <form id="" method="post" action="{{route('form.order')}}">
+                                        @csrf
                                         <fieldset>
                                             <h4 class="color-blue orbitron-font">Personal Details</h4>
                                             <div class="row">
                                                 <div class="col-12 col-md-6">
                                                     <p class="dtr-form-column">
                                                         <label class="orbitron-font">Name:</label>
-                                                        <input name="name" class="required"  type="text" placeholder="Name">
+                                                        <input name="name" class="required"  type="text" placeholder="Name" required>
                                                     </p>
                                                 </div>
                                                 <div class="col-12 col-md-6">
                                                     <p class="dtr-form-column">
                                                         <label class="orbitron-font">Email:</label>
-                                                        <input name="email" class="required email" type="text" placeholder="Email">
+                                                        <input name="email" class="required email" type="text" placeholder="Email" required>
                                                     </p>
                                                 </div>
                                             </div>
@@ -93,13 +103,13 @@
                                                 <div class="col-12 col-md-6">
                                                     <p class="dtr-form-column">
                                                         <label class="orbitron-font">Mobile No:</label>
-                                                        <input name="mobile" class="required"  type="text" placeholder="Mobile Number">
+                                                        <input name="mobile" class="required"  type="text" placeholder="Mobile Number" required>
                                                     </p>
                                                 </div>
                                                 <div class="col-12 col-md-6">
                                                     <p class="dtr-form-column">
                                                         <label class="orbitron-font">Whatsapp No. :</label>
-                                                        <input name="whatsapp" class="required email" type="text" placeholder="Whatsapp Number">
+                                                        <input name="whatsapp" class="" type="text" placeholder="Whatsapp Number">
                                                     </p>
                                                 </div>
                                             </div>
@@ -108,13 +118,13 @@
                                                 <div class="col-12 col-md-6">
                                                     <p class="dtr-form-column">
                                                         <label class="orbitron-font">Company Name:</label>
-                                                        <input name="company_name" class="required"  type="text" placeholder="Company Name">
+                                                        <input name="company_name" class=""  type="text" placeholder="Company Name">
                                                     </p>
                                                 </div>
                                                 <div class="col-12 col-md-6">
                                                     <p class="dtr-form-column">
                                                         <label class="orbitron-font">Your Position:</label>
-                                                        <input name="position" class="required position" type="text" placeholder="Your Position">
+                                                        <input name="position" class=" position" type="text" placeholder="Your Position">
                                                     </p>
                                                 </div>
                                             </div>
@@ -122,13 +132,13 @@
                                                 <div class="col-12 col-md-6">
                                                     <p class="dtr-form-column">
                                                         <label class="orbitron-font">Slogan:</label>
-                                                        <input name="slogan" class="required"  type="text" placeholder="Slogan">
+                                                        <input name="slogan" class=""  type="text" placeholder="Slogan">
                                                     </p>
                                                 </div>
                                                 <div class="col-12 col-md-6">
                                                     <p class="dtr-form-column">
                                                         <label class="orbitron-font">Website Link:</label>
-                                                        <input name="website" class="required website" type="url" placeholder="Website Link">
+                                                        <input name="website" class=" website" type="url" placeholder="Website Link">
                                                     </p>
                                                 </div>
                                             </div>
@@ -137,13 +147,13 @@
                                                 <div class="col-12 col-md-6">
                                                     <p class="dtr-form-column">
                                                         <label class="orbitron-font">Name For Attention:</label>
-                                                        <input name="name" class="required"  type="text" placeholder="Name for Attention">
+                                                        <input name="attention_name" class=""  type="text" placeholder="Name for Attention" >
                                                     </p>
                                                 </div>
                                                 <div class="col-12 col-md-6">
                                                     <p class="dtr-form-column">
                                                         <label class="orbitron-font">Address:</label>
-                                                        <input name="email" class="required email" type="text" placeholder="Address">
+                                                        <input name="address" class="" type="text" placeholder="Address" >
                                                     </p>
                                                 </div>
                                             </div>
@@ -152,13 +162,13 @@
                                                 <div class="col-12 col-md-6">
                                                     <p class="dtr-form-column">
                                                         <label class="orbitron-font">Heading:</label>
-                                                        <input name="mobile" class="required"  type="text" placeholder="Heading">
+                                                        <input name="heading" class=""  type="text" placeholder="Heading">
                                                     </p>
                                                 </div>
                                                 <div class="col-12 col-md-6">
                                                     <p class="dtr-form-column">
                                                         <label class="orbitron-font">Details :</label>
-                                                        <input name="details" class="required details" type="text" placeholder=" Details">
+                                                        <input name="details" class=" details" type="text" placeholder=" Details">
                                                     </p>
                                                 </div>
                                             </div>
@@ -167,31 +177,31 @@
                                                 <div class="col-12 col-md-6">
                                                     <p class="dtr-form-column">
                                                         <label class="orbitron-font">Facebook:</label>
-                                                        <input name="mobile" class="required"  type="text" placeholder="Facebook">
+                                                        <input name="facebook" class=""  type="text" placeholder="Facebook">
                                                     </p>
                                                 </div>
                                                 <div class="col-12 col-md-6">
                                                     <p class="dtr-form-column">
                                                         <label class="orbitron-font">Linkedin :</label>
-                                                        <input name="details" class="required details" type="text" placeholder=" Linkedin">
+                                                        <input name="linkedin" class=" details" type="text" placeholder=" Linkedin">
                                                     </p>
                                                 </div>
                                                 <div class="col-12 col-md-6">
                                                     <p class="dtr-form-column">
                                                         <label class="orbitron-font">Instagram:</label>
-                                                        <input name="mobile" class="required"  type="text" placeholder="Instagram">
+                                                        <input name="instagram" class=""  type="text" placeholder="Instagram">
                                                     </p>
                                                 </div>
                                                 <div class="col-12 col-md-6">
                                                     <p class="dtr-form-column">
                                                         <label class="orbitron-font">Youtube :</label>
-                                                        <input name="details" class="required details" type="text" placeholder=" Youtube">
+                                                        <input name="youtube" class=" details" type="text" placeholder=" Youtube">
                                                     </p>
                                                 </div>
                                                 <div class="col-12 col-md-6">
                                                     <p class="dtr-form-column">
                                                         <label class="orbitron-font">Twitter :</label>
-                                                        <input name="details" class="required details" type="text" placeholder=" Twitter">
+                                                        <input name="twitter" class=" details" type="text" placeholder=" Twitter">
                                                     </p>
                                                 </div>
                                             </div>
@@ -200,7 +210,7 @@
                                                 <div class="col-12 col-md-6">
                                                     <p class="dtr-form-column">
                                                         <label class="orbitron-font">Contact Link :</label>
-                                                        <input name="details" class="required details" type="text" placeholder=" (e.g., domain.com.au/contact-us)">
+                                                        <input name="contact_link" class=" details" type="text" placeholder=" (e.g., domain.com.au/contact-us)">
                                                     </p>
                                                 </div>
                                             </div>
@@ -209,7 +219,7 @@
                                                 <div class="col-12 col-md-6">
                                                     <p class="dtr-form-column">
                                                         <label class="orbitron-font">Menu Name :</label>
-                                                        <input name="details" class="required details" type="text" placeholder="(e.g., Our Services)">
+                                                        <input name="menu" class=" details" type="text" placeholder="(e.g., Our Services)">
                                                     </p>
                                                 </div>
                                             </div>
@@ -219,13 +229,13 @@
                                                 <div class="col-12 col-md-6">
                                                     <p class="dtr-form-column">
                                                         <label class="orbitron-font">Primary Color :</label>
-                                                        <input name="details" class="required details" type="text" placeholder="(e.g., #873849)">
+                                                        <input name="primary_color" class=" details" type="text" placeholder="(e.g., #873849)" >
                                                     </p>
                                                 </div>
                                                 <div class="col-12 col-md-6">
                                                     <p class="dtr-form-column">
                                                         <label class="orbitron-font">Secondary Color :</label>
-                                                        <input name="details" class="required details" type="text" placeholder="(e.g., #39ebe9)">
+                                                        <input name="secondary_color" class=" details" type="text" placeholder="(e.g., #39ebe9)" >
                                                     </p>
                                                 </div>
                                             </div>
@@ -235,19 +245,19 @@
                                                 <div class="col-12 col-md-6">
                                                     <p class="dtr-form-column">
                                                         <label class="orbitron-font">Video 1 :</label>
-                                                        <input name="details" class="required details" type="text" placeholder="Url of Video">
+                                                        <input name="video1" class=" details" type="text" placeholder="Url of Video">
                                                     </p>
                                                 </div>
                                                 <div class="col-12 col-md-6">
                                                     <p class="dtr-form-column">
                                                         <label class="orbitron-font">Video 2 :</label>
-                                                        <input name="details" class="required details" type="text" placeholder="Url of Video">
+                                                        <input name="video2" class=" details" type="text" placeholder="Url of Video">
                                                     </p>
                                                 </div>
                                                 <div class="col-12 col-md-6">
                                                     <p class="dtr-form-column">
                                                         <label class="orbitron-font">Video 3 :</label>
-                                                        <input name="details" class="required details" type="text" placeholder="Url of Video">
+                                                        <input name="video3" class=" details" type="text" placeholder="Url of Video">
                                                     </p>
                                                 </div>
                                             </div>
@@ -256,7 +266,7 @@
                                                 Email up to a maximum of 10 photos to <a href="mailto:hello@ondigicard.com" class="color-blue">hello@ondigicard.com</a>. The photo dimensions ideally will be 800x600 pixels. If the photos provided are different to these dimensions, then we shall need to edit them for quality purposes.
                                             </p>
                                             <div>
-                                                <a href="#" class="dtr-btn btn-blue dtr-mt-30">Submit</a>
+                                                <input type="submit" class="dtr-btn btn-blue dtr-mt-30" value="Submit">
                                             </div>
                                             <div id="result"></div>
                                         </fieldset>
