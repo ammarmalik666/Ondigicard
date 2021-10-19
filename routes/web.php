@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmailsController;
+use App\Http\Controllers\OrdersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,3 +25,7 @@ Route::get('/order-now', function () {
 });
 Route::post('/contact',[EmailsController::class,'contact_form'])->name('form.contact');
 Route::post('/order-now',[EmailsController::class,'order_form'])->name('form.order');
+
+Route::get('/order',[OrdersController::class,'index']);
+Route::get('/order',[OrdersController::class,'index']);
+Route::post('/order',[OrdersController::class,'postPaymentStripe'])->name('addmoney.stripe');

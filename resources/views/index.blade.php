@@ -320,7 +320,7 @@
                         <li>Customise your business cards</li>
                         <li>Stay on brand</li>
                     </ul>
-                    <a href="/order-now" class="dtr-btn btn-blue dtr-mt-30">Order Now</a>
+                    <a href="/order" class="dtr-btn btn-blue dtr-mt-30">Order Now</a>
                 </div> 
             </div>
             <div class="col-12 col-md-6">

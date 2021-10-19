@@ -10,7 +10,7 @@
         <asmeta name="keywords" content="agency, personal, photography, one page">
         @include('partials.head_css')
     </head>
-    <body>
+    <body id="faqPage">
         <div id="dtr-wrapper" class="clearfix">
             <div class="dtr-preloader">
                 <div class="dtr-preloader-inner">
@@ -20,7 +20,7 @@
             <div class="dtr-responsive-header fixed-top">
                 <div class="container">
                     <a href="/">
-                        <img src="/assets/web_images/logo-dark.png" alt="logo">
+                        <img src="/assets/web_images/logo-dark.png" class="logo">
                     </a>
                     <button id="dtr-menu-button" class="dtr-hamburger" type="button">
                         <span class="dtr-hamburger-lines-wrapper">
@@ -64,8 +64,8 @@
                     </div>
                 </div>
             </header>
-            <div id="dtr-main-content">
-                <section class="dtr-section dtr-py-100 bg-light-blue pt-100">
+            <div id="dtr-main-content" >
+                <section class="dtr-section dtr-py-100 bg-light-blue pt-100 faq-banner">
                     <div class="container" style="padding-top:50px!important;">
                         <div class="dtr-styled-heading">
                             <h2 class="orbitron-font">What is a Digital Business Card?</h2>
@@ -74,8 +74,8 @@
                             <div class="col-12 col-md-4">
                                 <img src="/assets/web_images/DigicardSample-Phil.png" alt="" style=" width: 100%;">
                             </div>
-                            <div class="col-12 col-md-8" style="font-size:35px; padding:0px 20px; line-height: 50px;">
-                                <div class="bg-white" style="padding:50px 75px;">
+                            <div class="col-12 col-md-8 mdya">
+                                <div class="bg-white charter">
                                     Digital business cards are used by both individuals and businesses to quickly exchange contact information. <br><br>The Ondigicard is an excellent way to grow your network. Reason being is that it’s more engaging, cost-effective, and eco-friendly than traditional physical business cards.
                                     <br><br>
                                 </div>
@@ -85,8 +85,8 @@
                             <h2 class="orbitron-font mt-5">How Do I Share My Digital Business Card?</h2>
                         </div>
                         <div class="row">
-                            <div class="col-12 col-md-8" style="font-size:35px; padding:0px 20px; line-height: 50px;">
-                                <div class="bg-white" style="padding:50px 75px;">
+                            <div class="col-12 col-md-8 mdya">
+                                <div class="bg-white charter">
                                     There are multiple ways to share your Ondigicard digital business card. The quickest way to share your digital business card in person is with your QR code. <br><br>With Ondigicard, you are also able to send your digital business card to someone via an SMS text message, email, WhatsApp or social media.
                                     <br><br>
                                 </div>
@@ -95,15 +95,15 @@
                                 <img src="/assets/web_images/SocialMediaLinks.jpg" alt="" style=" width: 100%;">
                             </div>
                         </div>
-                        <div class="dtr-styled-heading">
+                        <div class="dtr-styled-heading m-mt-60 m-mb-20">
                             <h2 class="orbitron-font mt-5">How to Scan a QR Code</h2>
                         </div>
                         <div class="row">
                             <div class="col-12 col-md-4">
                                 <img src="/assets/web_images/QRCode.jpg" alt="" style=" width: 100%;">
                             </div>
-                            <div class="col-12 col-md-8" style="font-size:35px; padding:0px 20px; line-height: 50px;">
-                                <div class="bg-white" style="padding:50px 75px;">
+                            <div class="col-12 col-md-8 mdya">
+                                <div class="bg-white charter" >
                                     When you first open your card on your phone, you just tap the “Share this Card” button, then tap on the QR Code button. <br><br>This action will then bring up the QR Code which can be used by the person you’re meeting with to add your Ondigicard to their home screen.
                                     <br><br><br>
                                 </div>

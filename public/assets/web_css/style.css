@@ -847,3 +847,11 @@ opacity:0
 .orbitron-font{
 	font-family: 'Orbitron', sans-serif!important;
 }
+.charter{
+	padding:50px 75px;
+}
+#faqPage .mdya{
+	font-size:35px;
+	padding:0px 20px;
+	line-height: 50px;
+}

@@ -197,3 +197,103 @@
 .dtr-sm-pb-100, .dtr-sm-py-100 { padding-bottom: 100px !important }
 .dtr-sm-pl-100, .dtr-sm-px-100 { padding-left: 100px !important }
 }
+
+
+@media screen and (max-width: 500px)
+{
+	.dtr-responsive-header img.logo{
+		width: 100%;
+		max-width: 250px!important;
+	}
+	.dtr-section.dtr-hero-section-top-padding.dtr-pb-100{
+		padding-top: 150px!important;
+	}
+	.charter{
+		padding-left: 30px!important;
+		padding-right: 30px!important;
+		padding-bottom: 20px!important;
+	}
+	#about .dtr-styled-heading{
+		margin-left: 15px;
+	}
+	#about .dtr-styled-heading h2{
+		margin-left: 10px;
+	}
+	.dtr-pb-100{
+		padding-bottom: 30px!important;
+	}
+	.dtr-py-100{
+		padding-top: 30px!important;
+	}
+	.faq-banner{
+		margin-top: 80px;
+	}
+	#faqPage .bg-white{
+		background: none!important;
+	}
+	#faqPage .mdya{
+		padding: 0!important;
+		font-size: 25px!important;
+		line-height: 30px;
+	}
+	#faqPage .dtr-styled-heading{
+		margin-bottom: 25px!important;
+	}
+	#faqPage .mt-5{
+		margin-top: 0!important;
+	}
+	.m-mt-60{
+		margin-top: 60px!important;
+	}
+	.m-mb-20{
+		margin-bottom: 20px!important;
+	}
+	#faqPage .m-mt-60{
+		text-align: center;
+	}
+	#OrderPage .top-banner{
+		margin-top: 80px!important;
+	}
+	#PaymentPage{
+		display: block!important;
+	}
+	#PaymentPage .col2{
+		width: 100%!important;
+	}
+	#PaymentPage .col1{
+		width: 100%!important;
+		padding: 0!important;
+	}
+	#stripe .container .col1 .card {
+	   position: relative;
+	   width: 100%!important;
+	   height: 200px;
+	   margin-top: 85px;
+	   margin-bottom: 85px;
+	   margin-right: 10px;
+	   border-radius: 17px;
+	   box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.1);
+	   transition: all 1s;
+	   transform-style: preserve-3d;
+	}
+	#stripe .container .col1 .card .front {
+	   position: absolute;
+	   background: var(--card-color);
+	   border-radius: 17px;
+	   padding: 50px;
+	   width: 100%;
+	   height: 100%;
+	   transform: translateZ(1px);
+	   -webkit-transform: translateZ(1px);
+	   transition: background 0.3s;
+	   z-index: 50;
+	   background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(-245deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
+	   -webkit-backface-visibility: hidden;
+	   -moz-backface-visibility: hidden;
+	   -ms-backface-visibility: hidden;
+	   backface-visibility: hidden;
+	}
+	#stripe .container{
+		width: 100%!important;
+	}
+}

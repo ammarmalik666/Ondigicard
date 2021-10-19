@@ -1,6 +1,6 @@
 <div class="dtr-responsive-header fixed-top">
     <div class="container">
-        <a href="index.html"><img src="/assets/web_images/logo-dark.png" alt="logo"></a> 
+        <a href="/"><img src="/assets/web_images/logo-dark.png" alt="logo" class="logo"></a> 
         <button id="dtr-menu-button" class="dtr-hamburger" type="button"><span class="dtr-hamburger-lines-wrapper"><span class="dtr-hamburger-lines"></span></span></button>
     </div>
     <div class="dtr-responsive-header-menu"></div>

@@ -11,7 +11,7 @@
         @include('partials.head_css')
 
     </head>
-    <body>
+    <body id="OrderPage">
         <div id="dtr-wrapper" class="clearfix">
             <div class="dtr-preloader">
                 <div class="dtr-preloader-inner">
@@ -21,7 +21,7 @@
             <div class="dtr-responsive-header fixed-top">
                 <div class="container">
                     <!-- small devices logo --> 
-                    <a href="/"><img src="assets/web_images/logo-dark.png" alt="logo"></a> 
+                    <a href="/"><img src="assets/web_images/logo-dark.png" class="logo"></a> 
                     <!-- small devices logo ends --> 
                     <!-- menu button -->
                     <button id="dtr-menu-button" class="dtr-hamburger" type="button"><span class="dtr-hamburger-lines-wrapper"><span class="dtr-hamburger-lines"></span></span></button>
@@ -64,7 +64,7 @@
                 </div>
             </header>
             <div id="dtr-main-content">
-                <section class="dtr-section dtr-py-100 bg-light-blue pt-100">
+                <section class="dtr-section dtr-py-100 bg-light-blue pt-100 top-banner">
                     <div class="container" style="padding-top:50px!important;">
                         <div class="dtr-styled-heading">
                             <h4 class="orbitron-font">Personalising your own <span class="color-blue">Digital Business Card</span> is easy! Just fill in the information below that you want on yours and we’ll do the rest.</h4>
