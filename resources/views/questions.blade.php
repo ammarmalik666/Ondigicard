@@ -45,7 +45,7 @@
                                     <li> <a class="nav-link" href="/faqs">FAQ's</a> </li>
                                     <li> <a class="nav-link" href="/#contact">Contact</a> </li>
                                     <li> 
-                                        <a class="nav-link" href="/order-now"
+                                        <a class="nav-link order-btn-nav" href="/order-now"
                                             style="
                                             background-color:#F16505;
                                             padding: 10px 20px;

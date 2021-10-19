@@ -10,8 +10,8 @@
     <div class="container"> 
         <div class="row"> 
             <div class="col-12 col-md-6">
-            <p class="text-size-xxl orbitron-font font-weight-300 color-dark">Mobile</p>
-                <p class="text-size-xxl font-weight-300 color-dark orbitron-font">Your <span class="font-weight-500 orbitron-font">Profile</span></p>
+                <p class="text-size-xxl orbitron-font font-weight-300 color-dark t-main-p">Mobile</p>
+                <p class="text-size-xxl font-weight-300 color-dark orbitron-font t-main-p">Your <span class="font-weight-500 orbitron-font">Profile</span></p>
                 <div class="spacer-20"></div>
                 <h3>
                     <span class="dtr-animated-headline push"> 
@@ -31,11 +31,11 @@
         </div>
         <div class="row dtr-mt-30"> 
             <div class="col-12 col-md-10"> 
-                <p class="text-size-md">
+                <p class="text-size-md top-b-font">
                     <span class="font-weight-500 color-dark">Ondigicard</span>
                     is a digital business card designed to help you grow your business whilst growing your network.
                 </p>
-                <p class="text-size-md">
+                <p class="text-size-md top-b-font">
                     <span class="font-weight-500 color-dark">Network smarter with digital business cards</span><br>
                     Stand out from the crowd with digital business cards. Not only are digital business cards better for the environment, they’re also better for your wallet and will help you make a great first impression.
                 </p>
@@ -46,7 +46,7 @@
                     <li><a href="https://www.linkedin.com/company/ondigicard/" class="dtr-social-button dtr-linkedin" target="_blank" title="linkedin"><span>View Our Profile</span></a></li>
                 </ul>
             </div>
-            <div class="col-12 col-md-2 dtr-rounded-img small-device-space"> <a href="/order-now"><img src="/assets/web_images/experience-img.png" alt="image"></a></div>
+            <div class="col-12 col-md-2 dtr-rounded-img small-device-space special-offer-div"> <a href="/order-now"><img src="/assets/web_images/experience-img.png" alt="image"></a></div>
         </div>
     </div>
 </section>
@@ -192,7 +192,7 @@
     <div class="container">
         <!-- heading starts -->
         <div class="dtr-styled-heading heading-center">
-            <h2 class="orbitron-font">Features and Benefits</h2>
+            <h2 class="orbitron-font features-main-h2">Features and Benefits</h2>
         </div>
         <!-- heading ends --> 
         <!-- portfolio grid starts -->
@@ -280,7 +280,7 @@
     <div class="container">
         <!--== row starts ==-->
         <div class="row text-center">
-            <div class="col-12">
+            <div class="col-12 work-t-div">
                 <h3 class="orbitron-font font-weight-700 color-dark">Want to work together?</h3>
                 <p class="color-dark text-size-md orbitron-font">We're available for freelance work.</p>
                 <!-- link starts --> 
@@ -293,7 +293,7 @@
 </section>
 <section id="pricing" class="dtr-section dtr-py-100 bg-light-blue">
     <div class="container">
-        <div class="dtr-styled-heading">
+        <div class="dtr-styled-heading plans-main-div">
             <h2 class="orbitron-font">Plans & Pricing</h2>
         </div>
         <div class="row">
@@ -323,7 +323,7 @@
                     <a href="/order" class="dtr-btn btn-blue dtr-mt-30">Order Now</a>
                 </div> 
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 pricing-box-left-1">
                 <div class="dtr-pricing pricing-focused" style="background-color: #eee;">
                     <div class="dtr-focus-border bg-blue"></div>
                     <h4 class="dtr-pricing-heading mb-0 orbitron-font">
@@ -349,6 +349,30 @@
                     <a href="tel:0452144476" class="dtr-btn btn-blue dtr-mt-30">Talk to us: 0452 144 476 </a>
                 </div>
             </div>
+            <div class="col-12 col-md-6 pricing-box-left-2">
+                <div class="dtr-pricing pricing-focused" style="background-color: #eee;">
+                    <div class="dtr-focus-border bg-blue"></div>
+                    <h4 class="dtr-pricing-heading mb-0 orbitron-font">
+                        FOR BUSINESS
+                    </h4>
+                    <h4 class="dtr-pricing-heading orbitron-font">
+                        On<span class=" color-blue">digi</span>card Corporate
+                    </h4>
+
+                    <p class="color-dark">
+                        Set up your entire team with branded digital business cards.
+                    </p>
+                    <p class="color-dark">
+                        More affordable and eco-friendly than paper business cards, Ondigicard Corporate gives you all the benefits of our Professional plan, with premium features like corporate branding, custom URLs, administrative control, and more.
+                    </p>
+                    <p class="font-weight-500 color-dark">Includes:</p>
+                    <ul class="dtr-list-pricing">
+                        <li>Build and boost brand awareness</li>
+                        <li>Track and analyse business engagement</li>
+                    </ul>
+                    <a href="tel:0452144476" class="dtr-btn btn-blue dtr-mt-30">Talk to us: 0452 144 476 </a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -356,7 +380,7 @@
     <div class="container">
         <!--== row starts ==-->
         <div class="row text-center">
-            <div class="col-12">
+            <div class="col-12 work-t-div">
                 <h3 class="orbitron-font font-weight-700 color-dark">Want to work together?</h3>
                 <p class="color-dark text-size-md orbitron-font">We're available for freelance work.</p>
                 <!-- link starts --> 

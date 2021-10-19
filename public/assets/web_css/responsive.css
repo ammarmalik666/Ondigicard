@@ -224,6 +224,7 @@
 	}
 	.dtr-py-100{
 		padding-top: 30px!important;
+		padding-bottom: 30px!important;
 	}
 	.faq-banner{
 		margin-top: 80px;
@@ -295,5 +296,41 @@
 	}
 	#stripe .container{
 		width: 100%!important;
+	}
+	.t-main-p{
+		font-size: 40px;
+		line-height: 40px;
+	}
+	.top-b-font{
+		font-size: 20px;
+		line-height: 30px;
+	}
+	.special-offer-div{
+		text-align: center;
+	}
+	.special-offer-div img{
+		max-width: 65%;
+	}
+	.features-main-h2{
+		font-size: 25px!important;
+	}
+	.work-t-div h3{
+		font-size: 25px;
+	}
+	.work-t-div p{
+		font-size: 24px;
+	}
+	.pricing-box-left-1{
+		display: none;
+	}
+	.pricing-box-left-2{
+		display: block;
+	}
+	.plans-main-div{
+		margin-bottom: 20px;
+	}
+	.slicknav_nav a.order-btn-nav{
+		margin-top: 20px;
+		width: 40%!important;
 	}
 }
