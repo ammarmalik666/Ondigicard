@@ -1,6 +1,6 @@
 @extends('partials.layout')
 @section('meta')
-<title>Ondigicard</title>
+<title>Ondigicard - Mobile your Profile</title>
 @endsection
 @section('extra_css')
 
@@ -96,9 +96,9 @@
                     In keeping with their goal to provide  you with  the very best digital card service and product, below are links that should answer any queries that you may have:
                 </p>
                 <ul style="padding-left:30px;">
-                    <li class="mb-0"><a href="/faqs">Digital Business Cards</a></li>
-                    <li class="mb-0"><a href="/faqs">Sharing Your Card</a></li>
-                    <li class="mb-0"><a href="/faqs">How to Scan a QR Code</a></li>
+                    <li class="mb-0" class="color-blue"><a href="/faqs" class="color-blue">Digital Business Cards</a></li>
+                    <li class="mb-0" class="color-blue"><a href="/faqs" class="color-blue">Sharing Your Card</a></li>
+                    <li class="mb-0" class="color-blue"><a href="/faqs" class="color-blue">How to Scan a QR Code</a></li>
                 </ul>
                 <p>
                     If you have any question that you would like answered, please 

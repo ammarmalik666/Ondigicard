@@ -1,7 +1,7 @@
 <link href="/assets/web_images/icons/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
 <link href="/assets/web_images/icons/apple-touch-icon-120-precomposed.png" rel="apple-touch-icon" sizes="120x120">
 <link href="/assets/web_images/icons/apple-touch-icon-76-precomposed.png" rel="apple-touch-icon" sizes="76x76">
-<link href="/assets/web_images/icons/favicon.png" rel="shortcut icon">
+<link href="/assets/web_images/icons/favicon.png" rel="shortcut icon" type="image/png">
 <link rel="stylesheet" href="/assets/web_css/bootstrap.min.css">
 <link rel="stylesheet" href="/assets/web_fonts/iconfonts.css">
 <link rel="stylesheet" href="/assets/web_css/plugins.css">

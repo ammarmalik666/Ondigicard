@@ -331,6 +331,9 @@
 	}
 	.slicknav_nav a.order-btn-nav{
 		margin-top: 20px;
+		margin-bottom: 20px;
 		width: 40%!important;
+		border-radius:7px;
+		margin-left:10px;
 	}
 }

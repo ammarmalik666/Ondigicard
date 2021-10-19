@@ -9,8 +9,8 @@
     <div class="container">
         <div class="d-flex align-items-center justify-content-between">
             <div class="dtr-header-left">
-                <a class="logo-default dtr-scroll-link" href="#home"><img src="/assets/web_images/logo-dark.png" alt="logo" width="250"></a> 
-                <a class="logo-alt dtr-scroll-link" href="#home"><img src="/assets/web_images/logo-dark.png" alt="logo" width="250"></a> 
+                <a class="logo-default dtr-scroll-link" href="/"><img src="/assets/web_images/logo-dark.png" alt="logo" width="250"></a> 
+                <a class="logo-alt dtr-scroll-link" href="/"><img src="/assets/web_images/logo-dark.png" alt="logo" width="250"></a> 
             </div>
             <div class="dtr-header-right">
                 <div class="main-navigation dtr-menu-dark">

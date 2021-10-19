@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="format-detection" content="telephone=no">
-        <title>Ondigicard</title>
+        <title>Ondigicard - Mobile your Profile</title>
         <meta name="author" content="tansh">
         <meta name="description" content="HTML Teamplate">
         <asmeta name="keywords" content="agency, personal, photography, one page">
