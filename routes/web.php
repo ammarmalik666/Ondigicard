@@ -29,3 +29,4 @@ Route::post('/order-now',[EmailsController::class,'order_form'])->name('form.ord
 Route::get('/order',[OrdersController::class,'index']);
 Route::get('/order',[OrdersController::class,'index']);
 Route::post('/order',[OrdersController::class,'postPaymentStripe'])->name('addmoney.stripe');
+Route::get('/thankyou', [OrdersController::class,'thankyou']);

@@ -10,21 +10,53 @@
     
    <div class="container" id="PaymentPage">
         <div class="col2">
+            <div class="col-md-12">
+            @if(count($errors) > 0)
+               @if($errors->first() == 'unknownError')
+                  <div class="alert alert-warning">
+                     Unknown error occured. Please try again later!
+                  </div>
+               @elseif($errors->first() == 'tokenError')
+                  <div class="alert alert-warning">
+                     Something went wrong. Please reload the page and try again.
+                  </div>
+               @else
+                  <div class="alert alert-warning">
+                     Please fill all the fields!
+                  </div>
+               @endif
+            @endif
+            @if(session()->has('ex'))
+               <div class="alert alert-warning">
+                  {{session()->get('ex')}}
+               </div>
+            @endif
+            </div>
             <div class="dtr-form">
                <form class="form-horizontal" method="POST" id="payment-form" role="form" action="{!!route('addmoney.stripe')!!}">
                   @csrf
                   <fieldset>
                      <div class="col-12 col-md-12">
                          <p class="">
-                             <label class="orbitron-font">Email Address</label>
-                             <input name="email" class="email" type="email">
+                             <label class="orbitron-font">Your Full Name</label>
+                             <input name="cus_name" class="name" type="text" value="{{old('cus_name')}}">
                          </p>
                      </div>
-                     <div class="col-12 col-md-12">
-                         <p class="">
-                             <label class="orbitron-font">Mobile Number</label>
-                             <input name="mobile" class="mobile" type="text">
-                         </p>
+                     <div class="col-md-12">
+                        <div class="row">
+                           <div class="col-6 col-md-6">
+                               <p class="">
+                                   <label class="orbitron-font">Email Address</label>
+                                   <input name="email" class="email" type="email">
+                               </p>
+                           </div>
+                           <div class="col-6 col-md-6">
+                               <p class="">
+                                   <label class="orbitron-font">Mobile Number</label>
+                                   <input name="mobile" class="mobile" type="text">
+                               </p>
+                           </div>
+                        </div>
                      </div>
                      <div class="col-12 col-md-12">
                          <p class="">
@@ -54,8 +86,9 @@
                            </div>
                         </div>
                      </div>
+                     
                      <div class="col-12 col-md-12">
-                        <input type='hidden' name="amount" value="300" />
+                        <input type='hidden' name="amount" value="399" />
                         <button type="submit" class="dtr-btn btn-blue dtr-mt-30">Order Now »</button>
                      </div>
                   </fieldset>

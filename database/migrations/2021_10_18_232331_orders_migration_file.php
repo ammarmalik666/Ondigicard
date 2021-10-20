@@ -18,7 +18,11 @@ class OrdersMigrationFile extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('phone');
-            $table->enum('status',['Active','Completed'])->default('Active');
+            $table->string('order_id');
+            $table->string('charge_id');
+            $table->string('customer_id');
+            $table->string('amount');
+            $table->enum('status',['Active','Completed','Cancelled'])->default('Active');
             $table->timestamps();
         });
     }
