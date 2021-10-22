@@ -7,8 +7,8 @@
                 </div>
                 <div class="col-12 col-md-6 text-right">
                     <ul class="dtr-pipe-list">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-of-use">Terms of Use</a></li>
                     </ul>
                 </div>
             </div>

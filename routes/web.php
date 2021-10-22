@@ -23,6 +23,12 @@ Route::get('/faqs', function () {
 Route::get('/order-now', function () {
     return view('questions');
 });
+Route::get('/privacy-policy', function () {
+    return view('privacy-policy');
+});
+Route::get('/terms-of-use', function () {
+    return view('terms-of-use');
+});
 Route::post('/contact',[EmailsController::class,'contact_form'])->name('form.contact');
 Route::post('/order-now',[EmailsController::class,'order_form'])->name('form.order');
 
