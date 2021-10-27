@@ -25,6 +25,9 @@ Route::get('/order-now', function () {
 });
 Route::post('/contact',[EmailsController::class,'contact_form'])->name('form.contact');
 Route::post('/order-now',[EmailsController::class,'order_form'])->name('form.order');
+Route::get('/order/thankyou', function(){
+    return view('thankyou2');
+});
 
 Route::get('/order',[OrdersController::class,'index']);
 Route::get('/order',[OrdersController::class,'index']);

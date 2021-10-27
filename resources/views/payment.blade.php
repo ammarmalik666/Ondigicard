@@ -88,7 +88,7 @@
                      </div>
                      
                      <div class="col-12 col-md-12">
-                        <input type='hidden' name="amount" value="399" />
+                        <input type='hidden' name="amount" value="155" />
                         <button type="submit" class="dtr-btn btn-blue dtr-mt-30">Order Now »</button>
                      </div>
                   </fieldset>

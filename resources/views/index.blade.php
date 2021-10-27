@@ -436,9 +436,7 @@
                                 @enderror
                             </p>
                             <p>
-                                <textarea rows="6" name="message" id="message" class="required"  placeholder="Message">
-                                    {{old('message')}}
-                                </textarea>
+                                <textarea rows="6" name="message" id="message" class="required"  placeholder="Message">{{old('message')}}</textarea>
                                 @error('message')
                                     <span style="color: red;font-size: 14px;">
                                         *{{$message}}

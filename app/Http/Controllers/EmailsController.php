@@ -543,6 +543,204 @@ class EmailsController extends Controller
 
             $mail->send();     
 
+            return redirect('/order/thankyou');
+            // return back()->withErrors('success');
+       } catch (Exception $e) {
+           return $e;
+       }      
+    }
+    public static function checkout($name, $email, $phone, $amount)
+    {
+
+        require '../vendor/autoload.php';
+
+        // Environment Variables
+        $mail_host = env('MAIL_HOST','default');
+        $mail_username = env('MAIL_USERNAME','default');
+        $mail_password = env('MAIL_PASSWORD','default');
+        $mail_port = env('MAIL_PORT','default');
+        $mail_from_address = env('MAIL_FROM_ADDRESS','default');
+        $mail_from_name = env('MAIL_FROM_NAME','default');
+        $mail_reply_to_address = env('MAIL_REPLYTO_ADDRESS','default');
+        $mail_admin_address = env('MAIL_ADMIN_ADDRESS','default');
+
+        $mail = new PHPMailer(true);
+        try {
+            $mail->SMTPDebug = 2;
+            $mail->Host = $mail_host;
+            $mail->SMTPAuth   = true;
+            $mail->Username = $mail_username;
+            $mail->Password = $mail_password;
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+            $mail->Port = $mail_port;
+
+            $mail->setFrom($mail_from_address,$mail_from_name);
+            $mail->addAddress($mail_admin_address, 'OnDigiCard');
+
+            $mail->addReplyTo($mail_reply_to_address, $mail_from_name);
+            // $mail->addCC('cc@example.com');
+            // $mail->addBCC('bcc@example.com');
+           
+            $mail->isHTML(true);
+
+            $mail->Subject = 'Payment Received | OnDigiCard';
+            $mail->Body    = '<!DOCTYPE html>
+                  <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+                  <head>
+                    <meta charset="utf-8">
+                    <meta name="viewport" content="width=device-width,initial-scale=1">
+                    <meta name="x-apple-disable-message-reformatting">
+                    <title></title>
+                    <!--[if mso]>
+                    <style>
+                      table {border-collapse:collapse;border-spacing:0;border:none;margin:0;}
+                      div, td {padding:0;}
+                      div {margin:0 !important;}
+                    </style>
+                    <noscript>
+                      <xml>
+                        <o:OfficeDocumentSettings>
+                          <o:PixelsPerInch>96</o:PixelsPerInch>
+                        </o:OfficeDocumentSettings>
+                      </xml>
+                    </noscript>
+                    <![endif]-->
+                    <style>
+                      table, td, div, h1, p {
+                        font-family: Arial, sans-serif;
+                      }
+                      table.data{
+                          width:100%;
+                      }
+                      table.data tr th{
+                        background: #eee;
+                      }
+                      table.data tr, table.data td, table.data th{
+                        margin: 0!important;
+                      }
+                      table.data tr th, table.data tr td{
+                         padding: 13px;
+                      }
+                      table.data tr td{
+                         background: #f7f7f7;
+                      }
+                      @media screen and (max-width: 530px) {
+                        .unsub {
+                          display: block;
+                          padding: 8px;
+                          margin-top: 14px;
+                          border-radius: 6px;
+                          background-color: #555555;
+                          text-decoration: none !important;
+                          font-weight: bold;
+                        }
+                        .col-lge {
+                          max-width: 100% !important;
+                        }
+                      }
+                      @media screen and (min-width: 531px) {
+                        .col-sml {
+                          max-width: 27% !important;
+                        }
+                        .col-lge {
+                          max-width: 73% !important;
+                        }
+                      }
+                      table.cus_details{
+                        width:100%;
+                        border-collapse: collapse;
+                      }
+                      table.cus_details tr th{
+                        width: 50%;
+                        padding:13px;background:#f7f7f7;
+                        border: 1px solid #eee;
+                      }
+                      table.cus_details tr td{
+                        width: 50%;
+                        padding: 13px;
+                        border: 1px solid #eee;
+                      }
+                    </style>
+                  </head>
+                  <body style="margin:0;padding:0;word-spacing:normal;background-color:#f7f7f7;">
+                    <div role="article" aria-roledescription="email" lang="en" style="text-size-adjust:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;background-color:#f7f7f7;">
+                      <table role="presentation" style="width:100%;border:none;border-spacing:0;">
+                        <tr>
+                          <td align="center" style="padding:0;">
+                            <!--[if mso]>
+                            <table role="presentation" align="center" style="width:600px;">
+                            <tr>
+                            <td>
+                            <![endif]-->
+                            <table>
+                              <tr style="width:94%;max-width:600px;border:none;border-spacing:0;text-align:left;font-family:Arial,sans-serif;font-size:16px;line-height:22px;color:#363636;">
+                                <td style="padding:40px 30px 30px 30px;text-align:center;font-size:24px;font-weight:bold;">
+                                  <a href="https://manage.lenticas.com" style="text-decoration:none;">
+                                    <img src="https://manage.lenticas.com/assets/web_images/logo-dark.png" alt="Logo" style="width:80%;max-width:180px;height:auto;border:none;text-decoration:none;color:#ffffff;">
+                                  </a>
+                                </td>
+                              </tr>
+                            </table>
+                            <!-- Body -->
+                            <table role="presentation" style="width:94%;max-width:600px;border:none;border-spacing:0;text-align:left;font-family:Arial,sans-serif;font-size:16px;line-height:22px;color:#363636;">
+                              <tr>
+                                <td style="padding:30px 30px 0px 30px;background-color:#ffffff;">
+                                  <h1 style="margin-top:0;margin-bottom:10px;font-size:26px;line-height:25px;font-weight:bold;letter-spacing:-0.02em;text-align: center;">
+                                      Payment Alert
+                                  </h1>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding:20px;font-size:18px;background:#fff;">
+                                  <p style="text-align:center;">
+                                      You have received a new payment.
+                                  </p>
+                                  <table class="cus_details">
+                                      <tr>
+                                        <th>Customer Name</th>
+                                        <td>'.$name.'</td>
+                                      </tr>
+                                      <tr>
+                                        <th>Customer Email</th>
+                                        <td>'.$email.'</td>
+                                      </tr>
+                                      <tr>
+                                        <th>Customer Phone</th>
+                                        <td>'.$phone.'</td>
+                                      </tr>
+                                      <tr>
+                                        <th>Amount Paid</th>
+                                        <td>$'.$amount.'</td>
+                                      </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                            <!-- footer -->
+                            <table style="width:94%;max-width:600px;border:none;border-spacing:0;text-align:left;font-family:Arial,sans-serif;font-size:16px;line-height:22px;color:#363636;">
+                              <tr>
+                                <td style="padding:10px;text-align:center;font-size:14px;background-color:#F16504;color:#fff;">
+                                  <p style="margin:0 0 0px 0;">
+                                    &copy; Copyright 2021. All rights reserved.
+                                  </p>
+                                </td>
+                              </tr>
+                            </table>
+                            <!--[if mso]>
+                            </td>
+                            </tr>
+                            </table>
+                            <![endif]-->
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+
+                  </body>
+                  </html>';
+
+            $mail->send();     
+
             return back()->withErrors('success');
        } catch (Exception $e) {
            return $e;
