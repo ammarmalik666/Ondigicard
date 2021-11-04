@@ -224,3 +224,10 @@
    margin: auto;
    background: #ddd;
 }
+.bank_details{
+  font-family: 'Orbitron', sans-serif!important;
+  margin-top: -25px; 
+}
+.bank_details table .td2{
+   padding-left: 10px;
+}

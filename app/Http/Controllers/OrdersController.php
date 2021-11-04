@@ -57,8 +57,6 @@ class OrdersController extends Controller
        // Check customer in Stripe
        $customer = $stripe->customers->all(['email' => $request->email]);
 
-       // return $customer;
-
        if(empty($customer->data))
        {
           //create customer
@@ -98,32 +96,32 @@ class OrdersController extends Controller
        
        try {
             
-            // $token = $stripe->tokens->create([
-            //     'card' => [
-            //     'number' => $request->get('card_no'),
-            //     'exp_month' => $exp_month,
-            //     'exp_year' => $exp_year,
-            //     'cvc' => $request->get('cvvNumber'),
-            //     ],
-            // ]);
+            $token = $stripe->tokens->create([
+                'card' => [
+                'number' => $request->get('card_no'),
+                'exp_month' => $exp_month,
+                'exp_year' => $exp_year,
+                'cvc' => $request->get('cvvNumber'),
+                ],
+            ]);
 
 
-
-           // if (!isset($token['id'])) {
-           //  return redirect('/order')->withErrors('tokenError');
-           // }
+           if (!isset($token['id'])) {
+            return redirect('/order')->withErrors('tokenError');
+           }
            $desc = $request->cus_name. ' - '.$order_id;
            $charge = $stripe->charges->create([
-            // 'card' => $token['id'],
+            'card' => $token['id'],
             'receipt_email' => $request->email,
             'currency' => 'AUD',
             'amount' => $amount,
-            'customer' => $customer_id,
+            // 'customer' => $customer_id,
             'description' => $desc
            ]);
+           // return $charge;
            if($charge['status'] == 'succeeded') {
                
-               $customer_id = $charge->customer;
+               $customer_id = "NaN";
                Order::create([
                     'name' => $request->cus_name,
                     'email' => $request->email,
@@ -149,7 +147,6 @@ class OrdersController extends Controller
           $request->session()->put('ex', $e->getMessage());
           return back();
        }
-        
     }
     public function thankyou()
     {
@@ -162,4 +159,5 @@ class OrdersController extends Controller
         }
 
     }
+
 }
