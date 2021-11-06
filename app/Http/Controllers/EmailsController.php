@@ -19,6 +19,14 @@ class EmailsController extends Controller
             'message' => 'required'
         ]);
 
+        // Checking Google Capthcha first
+        // ================================
+        $recaptcha = $_POST['g-recaptcha-response'];
+        $res = $this->reCaptcha($recaptcha);
+        if(!$res['success']){
+          return back()->withErrors('captchaError');
+        }
+
         require '../vendor/autoload.php';
 
         $name = $request->name;
@@ -201,13 +209,21 @@ class EmailsController extends Controller
 
             return back()->withErrors('success');
        } catch (Exception $e) {
-           return $e;
+           return back()->withErrors('emailError');
        }      
     }
     public function order_form(Request $request)
     {
 
         require '../vendor/autoload.php';
+
+        // Checking Google Capthcha first
+        // ================================
+        $recaptcha = $_POST['g-recaptcha-response'];
+        $res = $this->reCaptcha($recaptcha);
+        if(!$res['success']){
+          return back()->withErrors('captchaError');
+        }
 
         $name = $request->name;
         $email = $request->email;
@@ -546,7 +562,7 @@ class EmailsController extends Controller
             return redirect('/order/thankyou');
             // return back()->withErrors('success');
        } catch (Exception $e) {
-           return $e;
+           return back()->withErrors('emailError');
        }      
     }
     public static function checkout($name, $email, $phone, $amount)
@@ -745,5 +761,21 @@ class EmailsController extends Controller
        } catch (Exception $e) {
            return $e;
        }      
+    }
+    public function reCaptcha($recaptcha){
+      $secret = env('CAPTCHA_SECRET','default');
+      $ip = $_SERVER['REMOTE_ADDR'];
+
+      $postvars = array("secret"=>$secret, "response"=>$recaptcha, "remoteip"=>$ip);
+      $url = "https://www.google.com/recaptcha/api/siteverify";
+      $ch = curl_init();
+      curl_setopt($ch, CURLOPT_URL, $url);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+      curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+      curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
+      $data = curl_exec($ch);
+      curl_close($ch);
+
+      return json_decode($data, true);
     }
 }

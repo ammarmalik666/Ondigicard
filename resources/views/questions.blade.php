@@ -75,6 +75,10 @@
                                     <div class="alert alert-success">
                                         Message successfully sent.
                                     </div>
+                                @elseif($errors->first('captchaError'))
+                                    <div class="alert alert-warning">
+                                        Captcha verification failed. Please try again.
+                                    </div>
                                 @endif
                             @endif
                         </div>  
@@ -266,6 +270,8 @@
                                                 Email up to a maximum of 10 photos to <a href="mailto:hello@ondigicard.com" class="color-blue">hello@ondigicard.com</a>. The photo dimensions ideally will be 800x600 pixels. If the photos provided are different to these dimensions, then we shall need to edit them for quality purposes.
                                             </p>
                                             <div>
+                                                <div class="g-recaptcha" id="rcaptcha" data-sitekey="{{env('CAPTCHA_SITEKEY','default')}}"></div>
+                                                <span id="captcha" style="color:red;font-size: 14px;" /></span>
                                                 <input type="submit" class="dtr-btn btn-blue dtr-mt-30" value="Submit">
                                             </div>
                                             <div id="result"></div>
@@ -284,5 +290,29 @@
         <script src="assets/web_js/bootstrap.min.js"></script> 
         <script src="assets/web_js/plugins.js"></script> 
         <script src="assets/web_js/custom.js"></script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <script>
+            window.onload = function() {
+                var $recaptcha = document.querySelector('#g-recaptcha-response');
+
+                if($recaptcha) {
+                    $recaptcha.setAttribute("required", "required");
+                }
+            };
+            function get_action(form) 
+            {
+                var v = grecaptcha.getResponse();
+                if(v.length == 0)
+                {
+                    document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
+                    return false;
+                }
+                else
+                {
+                     document.getElementById('captcha').innerHTML="Captcha completed";
+                    return true; 
+                }
+            }
+        </script>
     </body>
 </html>

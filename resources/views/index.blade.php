@@ -419,6 +419,14 @@
                         <div class="alert alert-success">
                             Message successfully sent.
                         </div>
+                    @elseif($errors->first() == 'captchaError')
+                        <div class="alert alert-warning">
+                            Captcha verification failed. Please try again.
+                        </div>
+                    @elseif($errors->first() == 'emailError')
+                        <div class="alert alert-warning">
+                            Something went wrong. Please try again later!
+                        </div>
                     @endif
                 @endif
                 <div class="dtr-form">
@@ -460,7 +468,9 @@
                                 @enderror
                             </p>
                             <p class="text-center">
-                                <button class="dtr-btn btn-blue dtr-mt-minus30" type="submit">Enquire Now<i class="icon-cursor dtr-ml-15"></i></button>
+                                <div class="g-recaptcha" id="rcaptcha" data-sitekey="{{env('CAPTCHA_SITEKEY','default')}}"></div>
+                                <span id="captcha" style="color:red;font-size: 14px;" /></span>
+                                <button class="dtr-btn btn-blue" style="margin-top: 10px;" type="submit">Enquire Now<i class="icon-cursor dtr-ml-15"></i></button>
                             </p>
                             <div id="result"></div>
                         </fieldset>
@@ -494,4 +504,30 @@
         <!--== row ends ==--> 
     </div>
 </section>
+
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script>
+    window.onload = function() {
+        var $recaptcha = document.querySelector('#g-recaptcha-response');
+
+        if($recaptcha) {
+            $recaptcha.setAttribute("required", "required");
+        }
+    };
+    function get_action(form) 
+    {
+        var v = grecaptcha.getResponse();
+        if(v.length == 0)
+        {
+            document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
+            return false;
+        }
+        else
+        {
+             document.getElementById('captcha').innerHTML="Captcha completed";
+            return true; 
+        }
+    }
+</script>
+
 @endsection     
