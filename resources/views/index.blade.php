@@ -281,17 +281,30 @@
 </section>
 <section class="dtr-section parallax dtr-py-100" style="background-image: url(/assets/web_images/background-cta.jpg);">
     <div class="container">
-        <!--== row starts ==-->
-        <div class="row text-center">
-            <div class="col-12 work-t-div">
-                <h3 class="orbitron-font font-weight-700 color-dark">Want to work together?</h3>
-                <p class="color-dark text-size-md orbitron-font">We're available for freelance work.</p>
-                <!-- link starts --> 
-                <a href="#contact" class="dtr-btn btn-white dtr-mt-30">Contact Us <i class="icon-chevron-compact-right"></i></a> 
-                <!-- link ends --> 
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="dtr-pricing bg-white">
+                    <p>
+                        If you have submitted your information and would like us to create your Business Card. Please Click on the <span class="color-blue">Pay Now</span> button below.
+                    </p>
+                    <p>
+                        Our Team will start on your digital business card as soon as your payment has been recieved by us.
+                    </p>
+                    <a href="/order" class="dtr-btn btn-blue dtr-mt-30">Pay Now</a>
+                </div> 
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="dtr-pricing bg-white">
+                    <p>
+                        If you have not submitted your details yet, please Click on the <span class="color-blue">Order Now</span> button below to details all the information you would like to see on your digital business card.
+                    </p>
+                    <p>
+                        Our Team will start on your digital business card as soon as your payment has been recieved by us.
+                    </p>
+                    <a href="/order-now" class="dtr-btn btn-blue dtr-mt-30">Order Now</a>
+                </div> 
             </div>
         </div>
-        <!--== row ends ==--> 
     </div>
 </section>
 <section id="pricing" class="dtr-section dtr-py-100 bg-light-blue">
