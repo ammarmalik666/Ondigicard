@@ -13,7 +13,6 @@ use Input;
 use View;
 use Stripe\Error\Card;
 use Stripe\Stripe;
-// use Cartalyst\Stripe\Stripe;
 
 class OrdersController extends Controller
 {

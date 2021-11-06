@@ -62,7 +62,10 @@
         </div>
         <div class="row d-flex">
             <div class="col-12 col-md-6 small-device-space">
-                <div class="dtr-pr-30"> <img src="/assets/web_images/our-story.jpg" alt="image"> </div>
+                <div class="dtr-pr-30">
+                    <img src="/assets/web_images/our-story.jpg" alt="image">
+                    <a href="https://www.ondigicard.com/Phil-Manhire" class="dtr-btn btn-dark dtr-mt-30" style="width:100%;" target="_blank">View Sample Profile</a>
+                </div>
             </div>
             <div class="col-12 col-md-6">
                 

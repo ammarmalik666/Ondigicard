@@ -77,7 +77,9 @@
                             <div class="col-12 col-md-8 mdya">
                                 <div class="bg-white charter">
                                     Digital business cards are used by both individuals and businesses to quickly exchange contact information. <br><br>The Ondigicard is an excellent way to grow your network. Reason being is that it’s more engaging, cost-effective, and eco-friendly than traditional physical business cards.
-                                    <br><br>
+                                    
+                                    <a href="https://www.ondigicard.com/Phil-Manhire" class="dtr-btn btn-blue dtr-mt-30" target="_blank">View Sample Profile</a>
+                                    <br>
                                 </div>
                             </div>
                         </div>
